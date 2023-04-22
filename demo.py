@@ -2,6 +2,7 @@
 import streamlit as st
 import numpy as np
 import spectral
+import matplotlib.pyplot as plt
 import numpy as np
 import spectral.io.envi as envi
 from sklearn.decomposition import PCA
