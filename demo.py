@@ -52,7 +52,7 @@ fruits = st.selectbox("SELECT A FRUIT : ", ['KIWI', 'MANGO', 'PAPAYA', 'AVACADO'
 st.write("Your Selected Fruit Is: ", fruits)
 
 
-os.environ["SPECTRAL_DATA"] = "/path/to/directory"
+
 # Render a file uploader control
 uploaded_file_1 = st.file_uploader("Choose An .hdr File", type=["hdr"])
 uploaded_file_2 = st.file_uploader("Choose An .bin File", type=["bin"])
@@ -98,8 +98,17 @@ def check_new_image(image, model):
 # .title() is used to get the input text string
 if(st.button('Predict')):
     if uploaded_file_1 is not None and uploaded_file_2 is not None:
-        check_img = spectral.envi.open(uploaded_file_1.name,uploaded_file_2.name).load()
+        #check_img = spectral.envi.open(uploaded_file_1.name,uploaded_file_2.name).load()
         #st.write(check_img.shape)
+        path_to_files = "path/to/files/"
+        file1 = path_to_files + uploaded_file_1.name
+        file2 = path_to_files + uploaded_file_2.name
+        check_img = spectral.envi.open(file1, file2).load()
         st.success(check_new_image(check_img, model))
     else:
         st.write("Please upload image. Make sure your image is in HDR/BIN Format.")
+
+        
+        
+
+#Created by Tanay Nikam
