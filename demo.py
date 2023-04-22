@@ -52,7 +52,7 @@ fruits = st.selectbox("SELECT A FRUIT : ", ['KIWI', 'MANGO', 'PAPAYA', 'AVACADO'
 st.write("Your Selected Fruit Is: ", fruits)
 
 
-
+os.environ["SPECTRAL_DATA"] = "/path/to/directory"
 # Render a file uploader control
 uploaded_file_1 = st.file_uploader("Choose An .hdr File", type=["hdr"])
 uploaded_file_2 = st.file_uploader("Choose An .bin File", type=["bin"])
