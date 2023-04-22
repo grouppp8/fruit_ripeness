@@ -12,5 +12,4 @@ spectral==0.23.1
 streamlit==1.18.1
 tensorflow==2.11.0
 tensorflow-estimator==2.11.0
-tensorflow-intel==2.11.0
 tensorflow-io-gcs-filesystem==0.31.0
