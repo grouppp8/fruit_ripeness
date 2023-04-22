@@ -1,7 +1,6 @@
 # import module
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
 import spectral
 import numpy as np
 import spectral.io.envi as envi
