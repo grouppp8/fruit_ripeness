@@ -100,10 +100,11 @@ if(st.button('Predict')):
     if uploaded_file_1 is not None and uploaded_file_2 is not None:
         #check_img = spectral.envi.open(uploaded_file_1.name,uploaded_file_2.name).load()
         #st.write(check_img.shape)
-        path_to_files = "path/to/files/"
-        file1 = path_to_files + uploaded_file_1.name
-        file2 = path_to_files + uploaded_file_2.name
-        check_img = spectral.envi.open(file1, file2).load()
+        #path_to_files = "path/to/files/"
+        #file1 = path_to_files + uploaded_file_1.name
+        #file2 = path_to_files + uploaded_file_2.name
+        #check_img = spectral.envi.open(file1, file2).load()
+        check_img = spectral.envi.open(uploaded_file_1.name.split('/')[-1], uploaded_file_2.name.split('/')[-1]).load()
         st.success(check_new_image(check_img, model))
     else:
         st.write("Please upload image. Make sure your image is in HDR/BIN Format.")
