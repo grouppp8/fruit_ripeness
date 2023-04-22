@@ -98,9 +98,9 @@ def check_new_image(image, model):
 # .title() is used to get the input text string
 if(st.button('Predict')):
     if uploaded_file_1 is not None and uploaded_file_2 is not None:
-        check_img = spectral.envi.open(uploaded_file_1.name,uploaded_file_2.name).load()
         st.write(uploaded_file_1.name)
         st.write(uploaded_file_2.name)
+        check_img = spectral.envi.open(uploaded_file_1.name,uploaded_file_2.name).load()
         #path_to_files = "path/to/files/"
         #file1 = path_to_files + uploaded_file_1.name
         #file2 = path_to_files + uploaded_file_2.name
