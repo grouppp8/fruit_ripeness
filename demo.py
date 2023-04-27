@@ -8,6 +8,7 @@ import spectral.io.envi as envi
 from sklearn.decomposition import PCA
 from PIL import Image
 import base64
+import os
 from io import BytesIO
 
 
@@ -100,7 +101,7 @@ if(st.button('Predict')):
     if uploaded_file_1 is not None and uploaded_file_2 is not None:
         #st.write(uploaded_file_1.name)
         #st.write(uploaded_file_2.name)
-        check_img = spectral.envi.open(uploaded_file_1.name,uploaded_file_2.name).load()
+        check_img = spectral.envi.open(os.path.abspath(uploaded_file_1.name),os.path.abspath(uploaded_file_2.name)).load()
         #path_to_files = "path/to/files/"
         #file1 = path_to_files + uploaded_file_1.name
         #file2 = path_to_files + uploaded_file_2.name
