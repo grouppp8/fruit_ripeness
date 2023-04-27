@@ -98,15 +98,20 @@ def check_new_image(image, model):
 # display the name when the submit button is clicked
 # .title() is used to get the input text string
 if(st.button('Predict')):
-    if uploaded_file_1 is not None and uploaded_file_2 is not None:
+#     if uploaded_file_1 is not None and uploaded_file_2 is not None:
         #st.write(uploaded_file_1.name)
         #st.write(uploaded_file_2.name)
-        check_img = spectral.envi.open(os.path.abspath(uploaded_file_1.name),os.path.abspath(uploaded_file_2.name)).load()
+#         check_img = spectral.envi.open(os.path.abspath(uploaded_file_1.name),os.path.abspath(uploaded_file_2.name)).load()
         #path_to_files = "path/to/files/"
         #file1 = path_to_files + uploaded_file_1.name
         #file2 = path_to_files + uploaded_file_2.name
         #check_img = spectral.envi.open(file1, file2).load()
         #check_img = spectral.envi.open(uploaded_file_1.name.split('/')[-1], uploaded_file_2.name.split('/')[-1]).load()
+#         st.success(check_new_image(check_img, model))
+    if uploaded_file_1 is not None and uploaded_file_2 is not None:
+        file1_path = os.path.abspath(uploaded_file_1.name)
+        file2_path = os.path.abspath(uploaded_file_2.name)
+        check_img = spectral.envi.open(file1_path, file2_path).load()
         st.success(check_new_image(check_img, model))
     else:
         st.write("Please upload image. Make sure your image is in HDR/BIN Format.")
